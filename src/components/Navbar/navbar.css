@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15px;
+}
+
+.navbar__items {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.20;
+}
+
+.navbar__items > h3:hover {
+    color: #11b3ff;
+    cursor: pointer;
+}
+
+.navbar__items > .MuiSvgIcon-root:hover {
+    color: #11b3ff;
+    cursor: pointer;
+}
+
+.navbar__items > h3 {
+    color: darkslateblue;
+}
