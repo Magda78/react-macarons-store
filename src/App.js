@@ -4,6 +4,8 @@ import Navbar from './components/Navbar/navbar';
 import Banner from './components/Banner/banner';
 import Products from './components/Products/products';
 import Follow from './components/Follow/follow';
+import Testimonials from './components/Testimonials/testimonials';
+import Footer from './components/Footer/footer';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Banner />
       <Products />
       <Follow />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }
