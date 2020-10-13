@@ -1,0 +1,24 @@
+.products {
+    margin-top: 30px;;
+}
+
+.product__list {
+    margin-left: 138px;
+    margin-right: 138px;
+    margin-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 10px;
+	/*background: #dfb77e;*/
+	padding: 10px 10px;
+	justify-content: space-evenly;
+}
+
+.products > h3 {
+    text-align: center;
+	color: #6452a7;
+	letter-spacing: 4px;
+	font-size: 36px;
+	padding: 5px 5px;
+	text-transform: uppercase;
+}

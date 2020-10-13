@@ -1,0 +1,31 @@
+.item {
+	width: 256px;
+	height: 271px;
+	margin-bottom: 40px;
+	background: #ffffff;
+	filter: drop-shadow(6px 6px 4px rgba(106, 180, 211, 0.15));
+	border-radius: 15px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item__img {
+	width: 232px;
+	height: 164px;
+	position: relative;
+	overflow: hidden; /*to hide the sliding button on the img */
+	margin-top: 12px;
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.item__img > img {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.item__img:hover > img {
+	opacity: 0.7;
+}
