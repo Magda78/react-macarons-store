@@ -1,10 +1,11 @@
 import React from 'react';
-import './footer.css'
+import './footer.css';
+import Macarons from '../../assets/Macarons.png'
 
 function Footer() {
     return (
         <div className='footer'>
-            <img src='./img/Macarons.png' alt='logo' />
+            <img src={Macarons} alt='logo' />
             <div className='footer__content'>
                 <div className='footer__explore'>
                     <h4>Explore</h4>
