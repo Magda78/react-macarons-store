@@ -1,13 +1,20 @@
 import React ,{useState, useEffect} from 'react';
 import './products.css';
 import Item from '../Item/item';
-import items from '../../data/products.json'
+import items from '../../data/products.json';
+
 
 function Products() {
     const [products, setProducts] = useState([]);
-
+    
     useEffect(() => {
-        setProducts(items);
+        let newItems = items.map(item => {
+            const { id }  = item.sys;
+            const { title, price } = item.fields;
+            const  { url }   = item.fields.image.fields.file;
+            return {id, title, price, url}
+        })
+        setProducts(newItems);
       },[]);
 
       console.log(products)
@@ -15,9 +22,17 @@ function Products() {
         <div className='products'>
             <h3>Our Products</h3>
             <div className='product__list'>
-                {products.map(product => (
-                    <Item />
-                ))}
+                {
+                    products.map(item => (
+                        <Item 
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        price={item.price}
+                        url={item.url}
+                        />
+    ))
+                }
             </div>
         </div>
     )

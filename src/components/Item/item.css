@@ -29,3 +29,10 @@
 .item__img:hover > img {
 	opacity: 0.7;
 }
+
+.item__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
