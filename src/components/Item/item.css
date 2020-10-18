@@ -27,7 +27,31 @@
 }
 
 .item__img:hover > img {
-	opacity: 0.7;
+    opacity: 0.7;
+}
+
+.item__img > button {
+    position: absolute;
+	top: 120px;
+	right: 6px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	height: 25px;
+	background: #6452a7;
+	color: white;
+	border: none;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 1s all ease-in;
+	transform: translateX(101%);
+}
+
+.item__img:hover > button {
+    transform: translateX(0);
 }
 
 .item__details {

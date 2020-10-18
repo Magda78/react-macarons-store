@@ -6,6 +6,7 @@ function Item({id, title, price, url}) {
         <div className='item'>
             <div className='item__img'>
                 <img src={url} alt='' />
+                <button>Add to the card</button>
             </div>
             <div className='item__details'>
                 <h3>{title}</h3>
