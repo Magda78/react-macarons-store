@@ -49,7 +49,7 @@
 
 .banner__right {
 	flex: 0.5;
-	background-image: url('../../img/banner.jpg');
+	background-image: url('../../assets//banner.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
