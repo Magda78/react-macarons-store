@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { connect } from 'react-redux';
-import toogleCartHidden from '../redux/cart/cart.action';
+import { toogleCartHidden } from '../redux/cart/cart.action';
 import Cart from '../Cart/cart';
 
 function Navbar({ toogleCartHidden, hidden }) {

@@ -26,10 +26,8 @@ function Products() {
                     products.map(item => (
                         <Item 
                         key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        price={item.price}
-                        url={item.url}
+                       
+                        item={item}
                         />
     ))
                 }
