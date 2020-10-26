@@ -8,11 +8,13 @@ function Cart({cartItems}) {
         <div className='cart'>
             <div className='cart__items'>
                 {
+                    cartItems.length ?
                     cartItems.map(item => (
                         <CartItem 
                         key={item.id}
                         item={item}/>
-    ))
+                    )):
+                    <span className='cart__itemsMsg'>Your cart is empty</span>
                 }
             </div>
             <button>Check Out</button>

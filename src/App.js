@@ -1,21 +1,16 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar/navbar';
-import Banner from './components/Banner/banner';
-import Products from './components/Products/products';
-import Follow from './components/Follow/follow';
-import Testimonials from './components/Testimonials/testimonials';
-import Footer from './components/Footer/footer';
+import Home from './components/pages/home';
+import Checkout from './components/pages/checkout'
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      <Banner />
-      <Products />
-      <Follow />
-      <Testimonials />
-      <Footer />
+      <Switch>
+        <Route exact path = '/' component={Home}/>
+        <Route path = '/checkout' component={Checkout}/>
+      </Switch> 
     </div>
   );
 }
