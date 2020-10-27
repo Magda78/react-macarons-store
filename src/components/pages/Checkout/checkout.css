@@ -1,0 +1,34 @@
+.checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f8f8ff;
+    width: 70%;
+    height: 80vh;
+    margin: auto;
+}
+
+
+.checkout__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkgrey;
+    width: 100%;
+}
+
+.checkout__headerItem {
+    width: 20%
+}
+
+.checkout__headerItem:last-child {
+    width: 8%
+}
+
+.checkout__total {
+    margin-top: 30px;
+    margin-left: auto;
+    font-size: 36px;
+}
+

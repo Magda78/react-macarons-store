@@ -1,0 +1,42 @@
+.checkoutItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkgrey;
+    width: 100%;
+}
+
+.checkoutItem__name {
+    width: 24%;
+}
+
+.checkoutItem__quantity {
+    display: flex;
+    align-items: end;
+    width: 24%;
+    
+}
+
+.checkoutItem__price {
+    width: 24%;
+}
+
+.checkout__remove {
+    width: 8%;
+}
+
+.checkoutItem__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24%;
+}
+
+.checkoutItem__img > img {
+    width: 100%;
+    padding: 10%;
+}
+
+.checkoutItem__icons > .MuiSvgIcon-root {
+    cursor: pointer;
+}
