@@ -2,6 +2,7 @@
 	display: flex;
 	width: 100%;
 	margin-top: 70px;
+	height: 80vh;
 }
 
 .banner__left {
@@ -34,18 +35,6 @@
 	letter-spacing: 1px;
 	color: #ffffff;
 	font-weight: lighter;
-}
-
-.banner__leftInfo > button {
-	margin-top: 36px;
-	background-color: #6452a7;
-	padding: 10px 10px;
-	border: none;
-}
-
-.banner__leftInfo > button:hover {
-	background-color: darkslateblue;
-	color: #11b3ff;;
 }
 
 .banner__right {

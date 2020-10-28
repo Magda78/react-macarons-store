@@ -1,7 +1,7 @@
 .cart {
     position: absolute;
     width: 240px;
-    height: 340px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -13,13 +13,17 @@
 }
 
 .cart__items {
-    height: 240px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    margin-bottom: 10px;
 }
   
-.cart__items > button{
-    margin-top: auto;
+.cart__itemsMsg {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
   
