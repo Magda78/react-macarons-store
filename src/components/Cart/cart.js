@@ -3,8 +3,9 @@ import './cart.css';
 import CartItem from '../CartItem/cartItem';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { toogleCartHidden } from '../redux/cart/cart.action';
 
-function Cart({cartItems, history}) {
+function Cart({cartItems, history, toogleCartHidden}) {
     return (
         <div className='cart'>
             <div className='cart__items'>
@@ -20,6 +21,7 @@ function Cart({cartItems, history}) {
             </div>
             <button onClick = {() => {
                 history.push('/checkout')
+                toogleCartHidden()
             }}>Check Out</button>
         </div>
     )
@@ -29,4 +31,8 @@ const mapStateToProps = (state) => ({
 	cartItems: state.cart.cartItems
 })
 
-export default withRouter(connect(mapStateToProps)(Cart));
+const mapDispatchToProps = dispatch => ({
+	toogleCartHidden: () => dispatch(toogleCartHidden())
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart));

@@ -4,7 +4,8 @@ import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
     hidden: true,
-    cartItems: []
+    cartItems: [],
+    button: 'ADD TO THE CART'
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {

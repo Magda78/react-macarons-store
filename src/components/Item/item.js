@@ -10,8 +10,8 @@ function Item({item, addItem, cartItems}) {
             <div className='item__img'>
                 <img src={url} alt='' />
     <button onClick = {() => addItem(item)}>
-         {cartItems ? 'In the cart': 'Add to the cart'
-          }</button>
+    Add to the cart
+          </button>
             </div>
             <div className='item__details'>
                 <h3>{title}</h3>
