@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from '../features/userSlice';
-import basketSlice from '../features/basketSlice';
+//import appReducer from '../features/appSlice';
 
 export default configureStore({
   reducer: {
     user: userReducer,
-    basket: basketReducer
+    //app: appReducer,
   },
 });

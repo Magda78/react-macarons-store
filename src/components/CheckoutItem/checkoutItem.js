@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { clearItem, addItem, removeItem } from '../redux/cart/cart.action';
+//import { connect } from 'react-redux';
+//import { clearItem, addItem, removeItem } from '../redux/cart/cart.action';
 import './checkoutItem.css';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -27,10 +27,6 @@ function CheckoutItem({item, clearItem, addItem, removeItem}) {
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    clearItem: item => dispatch(clearItem(item)),
-    addItem: item => dispatch(addItem(item)),
-    removeItem: item => dispatch(removeItem(item))
-})
 
-export default connect(null,mapDispatchToProps)(CheckoutItem);
+
+export default CheckoutItem;

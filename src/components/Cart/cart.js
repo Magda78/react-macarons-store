@@ -1,9 +1,9 @@
 import React from 'react';
 import './cart.css';
 import CartItem from '../CartItem/cartItem';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { toogleCartHidden } from '../redux/cart/cart.action';
+//import { connect } from 'react-redux';
+//import { withRouter } from 'react-router-dom';
+//import { toogleCartHidden } from '../redux/cart/cart.action';
 
 function Cart({cartItems, history, toogleCartHidden}) {
     return (
@@ -27,12 +27,6 @@ function Cart({cartItems, history, toogleCartHidden}) {
     )
 }
 
-const mapStateToProps = (state) => ({
-	cartItems: state.cart.cartItems
-})
 
-const mapDispatchToProps = dispatch => ({
-	toogleCartHidden: () => dispatch(toogleCartHidden())
-});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart));
+export default Cart;
