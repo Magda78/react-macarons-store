@@ -10,11 +10,12 @@ export const basketSlice = createSlice ({
     setBasket: (state, action) => {
       state.basket = action.payload
     },
-    setOpen: (state) => {
-      state.open = false
+    setOpen: (state, action) => {
+      state.open = !state.open
     }
   }
 })
 export const { setBasket, setOpen } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.basket;
+export const selectOpen = (state) => state.basket.open;
 export default basketSlice.reducer;

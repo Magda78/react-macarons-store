@@ -1,5 +1,7 @@
 import React from 'react';
 import './item.css';
+//import { selectBasket } from '../../features/basketSlice';
+//import { useSelector } from 'react-redux';
 
 
 function Item({item, addItem, cartItems}) {
