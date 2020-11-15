@@ -8,7 +8,8 @@ export const basketSlice = createSlice ({
   },
   reducers: {
     setBasket: (state, action) => {
-      state.basket = action.payload
+      const { id, url, title, price } = action.payload
+      state.basket.push({id, url, title, price})
     },
     setOpen: (state, action) => {
       state.open = !state.open

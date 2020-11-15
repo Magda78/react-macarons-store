@@ -1,8 +1,11 @@
 import React from 'react';
 import './cartItem.css';
+import { selectBasket } from '../../features/basketSlice';
+import { useSelector } from 'react-redux';
 
-function CartItem({item}) {
-    const { url, title, price, quantity } = item
+function CartItem({id, url, price,title, quantity}) {
+    const basket = useSelector(selectBasket);
+    //const { url, title, price, quantity } = item
     return (
         <div className='cartItem'>
             <div className='cartItem__img'>
