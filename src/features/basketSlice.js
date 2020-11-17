@@ -31,12 +31,22 @@ export const basketSlice = createSlice ({
           }
         },
 
+        setAddQuantity: (state, action) => {
+          const {id, price, url, title, quantity} = action.payload
+          const isThere = state.basket.find(item => item.id === action.payload.id);
+          
+    
+            if(isThere) {
+              isThere.quantity++
+            }
+          },
+
     setOpen: (state) => {
       state.open = !state.open
     }
   }
 })
-export const { setBasket, setOpen, setRemove } = basketSlice.actions;
+export const { setBasket, setOpen, setRemove, setAddQuantity } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.basket;
 export const selectOpen = (state) => state.basket.open;
 export default basketSlice.reducer;

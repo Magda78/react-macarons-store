@@ -5,7 +5,7 @@ import './checkoutItem.css';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import { selectBasket, setRemove } from '../../features/basketSlice';
+import { selectBasket, setRemove, setAddQuantity } from '../../features/basketSlice';
 import { useSelector, useDispatch} from 'react-redux';
 import CartItem from '../CartItem/cartItem';
 
@@ -15,8 +15,15 @@ function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeIt
     const basket = useSelector(selectBasket);
     
 
-    const addItemHandler = () => (
-        console.log('add')
+    const addItemHandler = (id) => (
+        dispatch(setAddQuantity ({
+                id: id,
+                url: url,
+                title: title,
+                price: price,
+                quantity: quantity
+        }
+        ))
     )
 
     const minusItemHandler = () => (
@@ -43,7 +50,7 @@ function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeIt
             <div className='checkoutItem__quantity'>
                 <span className='checkoutItem__icons' onClick={minusItemHandler}><ArrowLeftIcon/></span>
                 <span>{quantity}</span>
-                <span className='checkoutItem__icons' onClick={addItemHandler}><ArrowRightIcon/></span>
+                <span className='checkoutItem__icons' onClick={() => addItemHandler(id)}><ArrowRightIcon/></span>
             </div>
             <span className='checkoutItem__price'>${price}</span>
             <span className='checkout__remove checkoutItem__icons' onClick={() => removeItemHandler(id)}><DeleteOutlineIcon/></span>
