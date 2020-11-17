@@ -4,14 +4,25 @@ export const basketSlice = createSlice ({
   name: 'basket',
   initialState: {
     basket: [],
-    open: false
+    open: false,
+    //quantity: 1
   },
   reducers: {
     setBasket: (state, action) => {
-      const { id, url, title, price } = action.payload
-      state.basket.push({id, url, title, price})
-    },
-    setOpen: (state, action) => {
+      const {id, price, url, title, quantity} = action.payload
+      const isThere = state.basket.find(item => item.id === action.payload.id);
+      
+
+        if(!isThere) {
+        state.basket.push({id, price, url, title, quantity: 1})
+        } else {
+          isThere.quantity++
+        }
+        
+      },
+
+
+    setOpen: (state) => {
       state.open = !state.open
     }
   }

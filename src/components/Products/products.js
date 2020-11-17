@@ -10,9 +10,9 @@ function Products() {
     useEffect(() => {
         let newItems = items.map(item => {
             const { id }  = item.sys;
-            const { title, price } = item.fields;
+            const { title, price, quantity } = item.fields;
             const  { url }   = item.fields.image.fields.file;
-            return {id, title, price, url}
+            return {id, title, price, url, quantity}
         })
         setProducts(newItems);
       },[]);

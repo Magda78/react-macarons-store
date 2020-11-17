@@ -1,7 +1,8 @@
 import React from 'react';
 import './checkout.css';
-//import { connect } from 'react-redux';
 import CheckoutItem from '../../CheckoutItem/checkoutItem';
+import { selectBasket } from '../../../features/basketSlice';
+import { useSelector } from 'react-redux';
 //import { createStructuredSelector } from 'reselect';
 //import {
   //  selectCartItems,
@@ -10,6 +11,7 @@ import CheckoutItem from '../../CheckoutItem/checkoutItem';
 
   
 function Checkout({cartItems, total}) {
+    const basket = useSelector(selectBasket);
     return (
         <div className='checkout'> 
             <div className='checkout__header'>
@@ -29,8 +31,15 @@ function Checkout({cartItems, total}) {
                     <span>Remove</span>
                 </div>
             </div>
-            {cartItems.map(item=> (
-                <CheckoutItem key={item.id} item={item}/>
+            {basket.map(item=> (
+                <CheckoutItem 
+                key={item.id} 
+                id={item.id} 
+                title={item.title}
+                price={item.price}
+                quantity={item.quantity}
+                url={item.url}
+                />
             ))
             }
             <div className='checkout__total'>TOTAL: ${total}</div>

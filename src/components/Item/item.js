@@ -8,25 +8,25 @@ function Item({item, addItem, cartItems}) {
     const dispatch = useDispatch()
 	const basket = useSelector(selectBasket);
     const { id, url, title, price } = item
+    let { quantity } = item
 
-    const addToTheCartHandler = () => (
-        dispatch(setBasket(
-            {
-                id: id,
-                url: url,
-                title: title,
-                price: price,
-                quantity: 1
-            }
-
-        ))
-    )
+    const addToTheCartHandler = (id) => {
+            dispatch(setBasket(
+                {
+                    id: id,
+                    url: url,
+                    title: title,
+                    price: price,
+                    quantity: quantity
+                }
+            )) }
+            
 
     return (
         <div className='item'>
             <div className='item__img'>
                 <img src={url} alt='' />
-    <button onClick={addToTheCartHandler}>
+    <button onClick={() => addToTheCartHandler(id)}>
     Add to the cart
           </button>
             </div>
