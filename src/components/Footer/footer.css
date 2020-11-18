@@ -10,7 +10,7 @@
 .footer > img {
 	position: absolute;
 	left: 138px;
-	top: 30px;
+	top: 250px;
 }
 
 .footer__content {
@@ -77,3 +77,4 @@
 	font-size: 12px;
 	color: #000000;
 }
+

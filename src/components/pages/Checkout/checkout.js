@@ -1,8 +1,8 @@
 import React from 'react';
 import './checkout.css';
 import CheckoutItem from '../../CheckoutItem/checkoutItem';
-import { selectBasket } from '../../../features/basketSlice';
-import { useSelector } from 'react-redux';
+import { selectBasket, setTotal} from '../../../features/basketSlice';
+import { useSelector, useDispatch } from 'react-redux';
 //import { createStructuredSelector } from 'reselect';
 //import {
   //  selectCartItems,
@@ -11,7 +11,15 @@ import { useSelector } from 'react-redux';
 
   
 function Checkout({cartItems, total}) {
+    const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
+    const cartTotal = useSelector(setTotal)
+
+    const totalHandler = () => {
+        console.log(cartTotal)
+        dispatch(setTotal());
+    }
+
     return (
         <div className='checkout'> 
             <div className='checkout__header'>
@@ -42,7 +50,10 @@ function Checkout({cartItems, total}) {
                 />
             ))
             }
-            <div className='checkout__total'>TOTAL: ${total}</div>
+            <div className='checkout__total' >
+                <button onClick={totalHandler}>click</button>
+                <span onChange={totalHandler}>TOTAL: ${total}</span>
+                </div>
         </div>
     )
 }

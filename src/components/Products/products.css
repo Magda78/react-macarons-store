@@ -22,3 +22,9 @@
 	padding: 5px 5px;
 	text-transform: uppercase;
 }
+
+@media screen and (max-width: 800px) {
+   .product__list {
+       grid-template-columns: none;
+   }
+  }

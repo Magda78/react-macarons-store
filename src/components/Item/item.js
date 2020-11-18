@@ -11,16 +11,16 @@ function Item({item, addItem, cartItems}) {
     let { quantity } = item
 
     const addToTheCartHandler = (id) => {
-            dispatch(setBasket(
-                {
-                    id: id,
-                    url: url,
-                    title: title,
-                    price: price,
-                    quantity: quantity
-                }
-            )) }
-            
+        dispatch(setBasket(
+            {
+                id: id,
+                url: url,
+                title: title,
+                price: price,
+                quantity: quantity
+            }
+        )) }
+
 
     return (
         <div className='item'>

@@ -23,7 +23,7 @@ function Navbar() {
 		<div className="navbar">
 			<div className="navbar__items">
 				<Link to='/'><h3>Shop</h3></Link>
-				<h3 onClick={() => auth.signOut()}>{user.displayName}</h3>
+				<h3 onClick={() => auth.signOut()}>Hello {user.displayName}</h3>
 				<ShoppingCartIcon onClick= {handleShoppingCart}/>
 					{
 						toggleCart ? (<Cart />) : null

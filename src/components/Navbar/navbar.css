@@ -12,7 +12,7 @@
 .navbar__items {
     display: flex;
     justify-content: space-between;
-    flex: 0.20;
+    flex: 1;
 }
 
 .navbar__items > h3:hover {
@@ -27,4 +27,14 @@
 
 .navbar__items > h3 {
     color: darkslateblue;
+    
+}
+
+.navbar__items > a {
+    text-decoration: none;
+}
+
+.navbar__items > a:hover {
+    color: #11b3ff;
+    cursor: pointer;
 }
