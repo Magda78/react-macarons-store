@@ -5,6 +5,7 @@
 				"title": "MACARONS SET 1",
 				"price": 10.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -19,6 +20,7 @@
 				"title": "MACARONS SET 2",
 				"price": 12.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -34,6 +36,7 @@
 				"title": "MACARONS SET 3",
 				"price": 12.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -49,6 +52,7 @@
 				"title": "MACARONS SET 4",
 				"price": 22.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -63,6 +67,8 @@
 			"fields": {
 				"title": "MACARONS SET 5",
 				"price": 8.99,
+				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -78,6 +84,7 @@
 				"title": "MACARONS SET 6",
 				"price": 3.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -93,6 +100,7 @@
 				"title": "MACARONS SET 7",
 				"price": 5.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {
@@ -108,6 +116,7 @@
 				"title": "MACARONS SET 8",
 				"price": 8.99,
 				"quantity": 0,
+				"total": 0,
 				"image": {
 					"fields": {
 						"file": {

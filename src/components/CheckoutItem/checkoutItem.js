@@ -5,15 +5,21 @@ import './checkoutItem.css';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity } from '../../features/basketSlice';
+import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, selectTotal, setTotal} from '../../features/basketSlice';
 import { useSelector, useDispatch} from 'react-redux';
 import CartItem from '../CartItem/cartItem';
 
-function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeItem}) {
+function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, removeItem}) {
     //const { url, title, price, quantity } = item
     const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
-    
+    //const cartTotal = useSelector(selectTotal)
+
+    const totalHandler = () => {
+      //  console.log(cartTotal)
+        dispatch(setTotal());
+    }
+
 
     const addItemHandler = (id) => (
         dispatch(setAddQuantity ({
@@ -21,9 +27,11 @@ function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeIt
                 url: url,
                 title: title,
                 price: price,
+                total: total,
                 quantity: quantity
         }
-        ))
+        )),
+        totalHandler()
     )
 
     const minusItemHandler = () => (
@@ -33,9 +41,11 @@ function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeIt
                 url: url,
                 title: title,
                 price: price,
+                total: total,
                 quantity: quantity
         }
-    ))
+    )),
+    totalHandler()
     )
 
     const removeItemHandler = (id) => {
@@ -45,6 +55,7 @@ function CheckoutItem({id,url,price,quantity,title, clearItem, addItem, removeIt
                 url: url,
                 title: title,
                 price: price,
+                total: total,
                 quantity: quantity
             },
             console.log(id)

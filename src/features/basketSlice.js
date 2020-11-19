@@ -9,7 +9,7 @@ export const basketSlice = createSlice ({
   },
   reducers: {
     setBasket: (state, action) => {
-      const {id, price, url, title, quantity} = action.payload
+      const {id, price, url, title, quantity, total} = action.payload
       const isThere = state.basket.find(item => item.id === action.payload.id);
       
 
@@ -22,31 +22,34 @@ export const basketSlice = createSlice ({
       },
 
       setRemove: (state, action) => {
-        const {id, price, url, title, quantity} = action.payload
+        let {id, price, url, title, quantity} = action.payload
         const isThere = state.basket.findIndex(item => item.id === action.payload.id);
         
           if(isThere != -1) {
-          state.basket.splice(isThere,1)  
+          state.basket.splice(isThere,1) ;
+          
           }
         },
 
         setAddQuantity: (state, action) => {
-          const {id, price, url, title, quantity} = action.payload
+          let {id, price, url, title, quantity, total} = action.payload
           const isThere = state.basket.find(item => item.id === action.payload.id);
           
     
             if(isThere) {
-              isThere.quantity++
+              isThere.quantity++;
+            //total = price * quantity ;
             }
           },
 
           setRemoveQuantity: (state, action) => {
-            const {id, price, url, title, quantity} = action.payload
+            let {id, price, url, title, quantity, total} = action.payload
             const isThere = state.basket.find(item => item.id === action.payload.id);
             
   
               if(isThere) {
-                isThere.quantity--
+                isThere.quantity--;
+               // total = price * quantity ;
               }
             },
 
@@ -56,8 +59,9 @@ export const basketSlice = createSlice ({
             state.basket.map(item => {
               itemTotal = item.price * item.quantity;
               state.total += itemTotal;
-              
+
             })
+            
           },
 
     setOpen: (state) => {
@@ -67,5 +71,6 @@ export const basketSlice = createSlice ({
 })
 export const { setBasket, setOpen, setRemove, setAddQuantity, setRemoveQuantity, setTotal } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.basket;
+export const selectTotal = (state) => state.basket.total;
 export const selectOpen = (state) => state.basket.open;
 export default basketSlice.reducer;

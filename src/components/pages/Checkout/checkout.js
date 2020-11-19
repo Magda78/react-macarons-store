@@ -1,7 +1,7 @@
 import React from 'react';
 import './checkout.css';
 import CheckoutItem from '../../CheckoutItem/checkoutItem';
-import { selectBasket, setTotal} from '../../../features/basketSlice';
+import { selectBasket, selectTotal, setTotal} from '../../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 //import { createStructuredSelector } from 'reselect';
 //import {
@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 function Checkout({cartItems, total}) {
     const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
-    const cartTotal = useSelector(setTotal)
+    const cartTotal = useSelector(selectTotal)
 
     const totalHandler = () => {
         console.log(cartTotal)
@@ -46,13 +46,17 @@ function Checkout({cartItems, total}) {
                 title={item.title}
                 price={item.price}
                 quantity={item.quantity}
+                total={item.total}
                 url={item.url}
                 />
             ))
             }
-            <div className='checkout__total' >
-                <button onClick={totalHandler}>click</button>
-                <span onChange={totalHandler}>TOTAL: ${total}</span>
+            <div className='checkout__total'>
+                   {cartTotal ? 
+                   <span>Total: ${cartTotal}</span>:
+                   <span>Total: $0.00</span>
+                   }
+                
                 </div>
         </div>
     )
