@@ -1,13 +1,19 @@
 import React from 'react';
 import './cart.css';
 import CartItem from '../CartItem/cartItem';
-import { selectBasket } from '../../features/basketSlice';
-import { useSelector } from 'react-redux';
+import { selectBasket, setTotal } from '../../features/basketSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 function Cart({cartItems, history, toogleCartHidden}) {
+    const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
     //const isThere = basket.find(item => item.id === id) 
+    const totalHandler = () => {
+        //  console.log(cartTotal)
+          dispatch(setTotal());
+      }
+
     return (
         <div className='cart'>
             <div className='cart__items'>
@@ -23,7 +29,9 @@ function Cart({cartItems, history, toogleCartHidden}) {
                              price={item.price}
                              quantity= {item.quantity}
                              />
-                        ))
+                        ),
+                        )
+                        
                         ) :
                     <span className='cart__itemsMsg'>Your cart is empty</span>
                 }
@@ -31,7 +39,8 @@ function Cart({cartItems, history, toogleCartHidden}) {
             <button onClick = {(e) => {
                 history.push('/checkout')
                 console.log(basket)
-                
+                totalHandler()
+                    
             }}>Check Out</button>
         </div>
     )
