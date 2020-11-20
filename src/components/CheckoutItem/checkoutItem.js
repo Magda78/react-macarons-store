@@ -48,7 +48,7 @@ function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, r
     totalHandler()
     )
 
-    const removeItemHandler = (id) => {
+    const removeItemHandler = (id) => (
         dispatch(setRemove(
             {
                 id: id,
@@ -59,7 +59,9 @@ function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, r
                 quantity: quantity
             },
             console.log(id)
-        )) }
+        )) ,
+        totalHandler()
+    )
     return (
         <div className='checkoutItem'>
             <div className='checkoutItem__img'>

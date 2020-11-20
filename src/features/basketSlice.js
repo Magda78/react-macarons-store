@@ -59,9 +59,7 @@ export const basketSlice = createSlice ({
             state.basket.map(item => {
               itemTotal = item.price * item.quantity;
               state.total += itemTotal;
-
             })
-            
           },
 
     setOpen: (state) => {

@@ -10,7 +10,8 @@ function Item({item, addItem, cartItems}) {
     const { id, url, title, price } = item
     let { quantity } = item
 
-    const addToTheCartHandler = (id) => {
+
+    const addToTheCartHandler = (id) => (
         dispatch(setBasket(
             {
                 id: id,
@@ -19,7 +20,8 @@ function Item({item, addItem, cartItems}) {
                 price: price,
                 quantity: quantity
             }
-        )) }
+        )) 
+        )
 
 
     return (
