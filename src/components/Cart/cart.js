@@ -1,7 +1,7 @@
 import React from 'react';
 import './cart.css';
 import CartItem from '../CartItem/cartItem';
-import { selectBasket, setTotal } from '../../features/basketSlice';
+import { selectBasket, setTotal, setOpen} from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
@@ -13,6 +13,10 @@ function Cart({cartItems, history, toogleCartHidden}) {
         //  console.log(cartTotal)
           dispatch(setTotal());
       }
+      const handleShoppingCart = () => {
+		dispatch(setOpen())
+		
+	 }  
 
     return (
         <div className='cart'>
@@ -40,7 +44,7 @@ function Cart({cartItems, history, toogleCartHidden}) {
                 history.push('/checkout')
                 console.log(basket)
                 totalHandler()
-                    
+                handleShoppingCart()
             }}>Check Out</button>
         </div>
     )

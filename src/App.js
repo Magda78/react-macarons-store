@@ -9,6 +9,10 @@ import { auth } from './firebase';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { login, logout} from './features/userSlice';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
+const promise = loadStripe("pk_test_51HYvl8LnOOmb4AwPUBJpQo3s6TKDdcTAHg3ExipDIg7Sd0oRFa5uc1K5g5LKOL6IuCncKJUWGJ0RxQtNmCFqiqjy00jS7UkApt");
 
 
 function App() {
@@ -42,7 +46,11 @@ function App() {
           <Navbar />
       <Switch>
         <Route exact path = '/' component={Home}/>
-        <Route path = '/checkout' component={Checkout}/>
+        <Route path = '/checkout'>
+          <Elements stripe={promise}>
+            <Checkout />
+          </Elements>  
+        </Route>
       </Switch> 
       </>
         )
