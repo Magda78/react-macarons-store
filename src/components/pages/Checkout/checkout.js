@@ -40,6 +40,8 @@ function Checkout({cartItems, total}) {
      getClientSecret();
  }, [basket])
 
+    console.log('the secret', clientSecret);
+
     const totalHandler = () => {
         console.log(cartTotal)
         dispatch(setTotal());
@@ -57,7 +59,7 @@ function Checkout({cartItems, total}) {
             setError(null);
             setProcessing(false);
 
-            history.replace('/orders')
+            history.replace('/checkout')
         });
         e.preventDefault()
     }

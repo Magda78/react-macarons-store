@@ -4,6 +4,7 @@ import Home from './components/pages/Home/home';
 import Checkout from './components/pages/Checkout/checkout';
 import Navbar from './components/Navbar/navbar';
 import Login from './components/pages/LogIn/login';
+import Orders from './components/pages/Orders/orders';
 import { Switch, Route } from 'react-router-dom';
 import { auth } from './firebase';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,7 +13,7 @@ import { login, logout} from './features/userSlice';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const promise = loadStripe("pk_test_51HYvl8LnOOmb4AwPUBJpQo3s6TKDdcTAHg3ExipDIg7Sd0oRFa5uc1K5g5LKOL6IuCncKJUWGJ0RxQtNmCFqiqjy00jS7UkApt");
+const promise = loadStripe("pk_test_51HqNdwGB4kjijur7PvxaEvxhx7WY2SX3mg9ydOCKxlJuASB8ItzmyWwASL71ouPsnmrOyNKyDltVV6fYytN9Ma3E00VQbCwBxt");
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             <Checkout />
           </Elements>  
         </Route>
+        <Route path='/orders' component={Orders}/>
       </Switch> 
       </>
         )

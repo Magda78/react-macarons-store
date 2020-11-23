@@ -32,3 +32,8 @@
     font-size: 36px;
 }
 
+.checkout_payment {
+    margin-top: 20px;
+    border-top: 1px solid darkgrey;
+    width: 100%;
+}
