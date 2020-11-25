@@ -5,7 +5,7 @@ import Checkout from './components/pages/Checkout/checkout';
 import Navbar from './components/Navbar/navbar';
 import Login from './components/pages/LogIn/login';
 import Orders from './components/pages/Orders/orders';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { auth } from './firebase';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from './features/userSlice';
@@ -40,19 +40,20 @@ function App() {
   },[dispatch]);
 
   return (
-    <div className="app">
+    <Router>
+      <div className="app">
       {
         user ? (
           <>
           <Navbar />
       <Switch>
-        <Route exact path = '/' component={Home}/>
+       <Route exact path = '/' component={Home}/>
         <Route path = '/checkout'>
           <Elements stripe={promise}>
             <Checkout />
           </Elements>  
         </Route>
-        <Route path='/orders' component={Orders}/>
+        <Route path='/orders' component={Orders}/> 
       </Switch> 
       </>
         )
@@ -62,6 +63,10 @@ function App() {
       }
       
     </div>
+    </Router>
+
+
+
   );
 }
 

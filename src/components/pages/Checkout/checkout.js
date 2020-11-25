@@ -32,7 +32,7 @@ function Checkout({cartItems, total}) {
          const response = await axios({
              method: 'post',
              // Stripe expects the total in a currencies subunits
-             url: `/payments/create?total=${cartTotal * 100}`
+             url: `/checkout/create?total=${cartTotal * 100}`
          });
          setClientSecret(response.data.clientSecret)
      }
@@ -47,7 +47,7 @@ function Checkout({cartItems, total}) {
         dispatch(setTotal());
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (event) => {
         //stripe config
         setProcessing(true);
         const payload = await stripe.confirmCardPayment(clientSecret, {
@@ -59,14 +59,15 @@ function Checkout({cartItems, total}) {
             setError(null);
             setProcessing(false);
 
-            history.replace('/checkout')
+            history.replace('/orders')
         });
-        e.preventDefault()
+        event.preventDefault()
     }
 
-    const handleChange = (e) => {
-        setDisabled(e.empty);
-        setError(e.error ? e.error.message: '')
+    const handleChange = (event) => {
+        //listen for changes in the card element, display errors made by costumer
+        setDisabled(event.empty);
+        setError(event.error ? event.error.message: '')
     }
 
 

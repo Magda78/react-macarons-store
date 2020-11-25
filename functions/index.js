@@ -24,7 +24,7 @@ app.use(express.json());
 app.get('/', (request, response) => response.status(200).send('hello world'));
 app.get('/mm', (request, response) => response.status(200).send('hiiiiiiiiiiii'));
 
-app.post('/payments/create', async (request, response) => {
+app.post('/checkout/create', async (request, response) => {
 	const total = request.query.total;
 
 	console.log('Payment Request Recieved BOOM!!! for this amount >>> ', total);
