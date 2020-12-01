@@ -46,5 +46,19 @@
 	
 }
 
+@media screen and (max-width: 800px) {
+	.banner__right {
+		display: none;
+	}
+	.banner__left {
+		flex: 1;
+		
+	}
+	.banner__leftInfo  {
+		justify-content: center;
+		text-align: center;
+	}
+   }
+
 
 
