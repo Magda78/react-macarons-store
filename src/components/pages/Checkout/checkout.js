@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './checkout.css';
 import CheckoutItem from '../../CheckoutItem/checkoutItem';
+import { selectUser } from '../../../features/userSlice';
 import { selectBasket, selectTotal, setTotal} from '../../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from '../../../axios';
 import { useHistory } from 'react-router-dom';
-//import { createStructuredSelector } from 'reselect';
-//import {
-  //  selectCartItems,
-   // selectCartTotal
-  //} from '../../redux/cart/cart.selector';
+import { db } from '../../../firebase';
+
 
   
 function Checkout({cartItems, total}) {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const user = useSelector(selectUser);
     const basket = useSelector(selectBasket);
     const cartTotal = useSelector(selectTotal);
     const[succeeded, setSucceeded] = useState(false);
@@ -41,6 +40,7 @@ function Checkout({cartItems, total}) {
  }, [basket])
 
     console.log('the secret', clientSecret);
+    console.log(user);
 
     const totalHandler = () => {
         console.log(cartTotal)
@@ -49,19 +49,33 @@ function Checkout({cartItems, total}) {
 
     const handleSubmit = async (event) => {
         //stripe config
+        event.preventDefault();
         setProcessing(true);
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({paymentIntent}) => {
+        }).then(({ paymentIntent }) => {
+            
+            db
+            .collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+            .set({
+                basket: basket,
+                //total: cartTotal,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created
+            })
+
             setSucceeded(true);
             setError(null);
             setProcessing(false);
 
-            history.replace('/orders')
+            history.push('/orders')
         });
-        event.preventDefault()
+        
     }
 
     const handleChange = (event) => {
@@ -114,16 +128,20 @@ function Checkout({cartItems, total}) {
                         <h3>Payment method</h3>
                    </div>
                    <div className='checkout_paymentDetails'>
-                       <form onSubmit={handleSubmit}>
-                           <CardElement onChange={handleChange}/>
-                           <button disabled={processing || disabled || succeeded}>
-                                <span>{processing ? <p>Processing</p> : 'Buy Now'}</span>
-                            </button>
+                   <form onSubmit={handleSubmit}>
+                            <CardElement onChange={handleChange}/>
+                            <div className='payment__priceContainer'>
+                                
+                                <button disabled={processing || disabled || succeeded}>
+                                    <span>{processing ? <p>Processing</p> : 'Buy Now'}</span>
+                                </button>
+                            </div>
                             {error && <div>{error}</div>}
-                       </form>
+                        </form>
                    </div>
+      
+    </div>
             </div>
-        </div>
     )
 }
 

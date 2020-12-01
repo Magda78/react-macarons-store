@@ -53,7 +53,7 @@ function App() {
             <Checkout />
           </Elements>  
         </Route>
-        <Route path='/orders' component={Orders}/> 
+        <Route path ='/orders' component={Orders}/> 
       </Switch> 
       </>
         )
