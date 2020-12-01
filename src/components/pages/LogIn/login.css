@@ -1,0 +1,63 @@
+.login {
+	display: flex;
+	width: 100%;
+	margin-top: 70px;
+	height: 100vh;
+}
+
+.login__left {
+	flex: 0.5;
+	display: flex;
+	background: #6ab4d3;
+}
+
+.login__leftInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 30px 20px;
+}
+
+.login__leftInfo > h4 {
+	text-transform: uppercase;
+	color: #6452a7;
+	font-size: 20px;
+	letter-spacing: 6px;
+	line-height: 100.2%;
+    font-weight: lighter;
+    margin-top: 40px;
+}
+
+.login__leftInfo > p {
+	margin-top: 30px;
+	line-height: 25px;
+	font-size: 18px;
+	line-height: 166.7%;
+	letter-spacing: 1px;
+	color: #ffffff;
+    font-weight: lighter;
+    margin-bottom: 40px;
+}
+
+.login__right {
+	flex: 0.5;
+	background-image: url('../../../assets//banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	
+}
+
+@media screen and (max-width: 800px) {
+	.login__right {
+		display: none;
+	}
+	.login__left {
+		flex: 1;
+		
+	}
+	.login__leftInfo  {
+		justify-content: center;
+		text-align: center;
+	}
+   }

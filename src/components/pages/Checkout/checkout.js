@@ -73,7 +73,8 @@ function Checkout({cartItems, total}) {
             setError(null);
             setProcessing(false);
 
-            history.push('/orders')
+            //history.push('/orders')
+            alert('Thank you for your order')
         });
         
     }
