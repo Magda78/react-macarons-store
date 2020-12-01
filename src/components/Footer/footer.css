@@ -7,16 +7,17 @@
 	margin-top: 70px;
 }
 
-.footer > img {
-	position: absolute;
-	left: 138px;
-	top: 250px;
+.footer__img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
 }
 
 .footer__content {
 	display: flex;
-	justify-content: flex-end;
-	margin-right: 138px;
+	justify-content: center;
+	padding: 20px;
 }
 
 .footer__explore {
@@ -78,3 +79,13 @@
 	color: #000000;
 }
 
+@media screen and (max-width: 800px) {
+	.footer {
+		height: 70px;
+	}
+
+	.footer__content {
+		display: none;
+	}
+
+   }

@@ -5,7 +5,9 @@ import Macarons from '../../assets/Macarons.png'
 function Footer() {
     return (
         <div className='footer'>
-            <img src={Macarons} alt='logo' />
+            <div className='footer__img'>
+                <img src={Macarons} alt='logo' />
+            </div>
             <div className='footer__content'>
                 <div className='footer__explore'>
                     <h4>Explore</h4>
