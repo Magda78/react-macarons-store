@@ -16,12 +16,16 @@
 
 .footer__content {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+	align-items: baseline;
 	padding: 20px;
 }
 
 .footer__explore {
-	text-align: right;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__explore >  h4 {
@@ -40,11 +44,13 @@
 }
 
 .footer__follow {
-	text-align: right;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__follow > h4 {
-	margin-left: 100px;
 	margin-top: 35px;
 	font-size: 24px;
 	color: #ffffff;
@@ -60,11 +66,13 @@
 }
 
 .footer__contact {
-	text-align: right;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__contact > h4 {
-	margin-left: 100px;
 	margin-top: 35px;
 	font-size: 24px;
 	color: #ffffff;

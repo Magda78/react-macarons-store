@@ -5,7 +5,9 @@ import Follow from '../../Follow/follow';
 import Testimonials from '../../Testimonials/testimonials';
 import Footer from '../../Footer/footer';
 
+
 function Home() {
+  
   return (
     <div className="app">
       <Banner />

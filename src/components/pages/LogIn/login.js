@@ -1,9 +1,8 @@
 import React from 'react';
 import { auth, provider } from '../../../firebase';
 import './login.css';
-import Macarons from '../../../assets/Macarons.png'
-//import { useSelector } from 'react-redux';
-//import { selectUser } from '../../features/userSlice';
+import Macarons from '../../../assets/Macarons.png';
+import BannerImg from '../../../assets/banner.jpg'
 
 
 function Login() {
@@ -31,6 +30,7 @@ function Login() {
                 </div>
             </div>
             <div className='login__right'>
+                    <img src={BannerImg} />
             </div>
 		</div>
     )

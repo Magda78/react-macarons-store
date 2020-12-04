@@ -39,11 +39,12 @@
 
 .banner__right {
 	flex: 0.5;
-	background-image: url('../../assets//banner.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	
+}
+
+.banner__right > img {
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 800px) {

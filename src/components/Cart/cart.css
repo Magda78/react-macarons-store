@@ -1,6 +1,6 @@
 .cart {
     position: absolute;
-    width: 240px;
+    width: 18%;
     height: 80vh;
     display: flex;
     flex-direction: column;

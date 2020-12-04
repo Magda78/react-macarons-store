@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './item.css';
 import { selectBasket, setBasket } from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,7 +9,7 @@ function Item({item, addItem, cartItems}) {
 	const basket = useSelector(selectBasket);
     const { id, url, title, price } = item
     let { quantity } = item
-
+    const [buttonTitle, setButtonTitle] = useState('Add to the card')
 
     const addToTheCartHandler = (id) => (
         dispatch(setBasket(
@@ -20,7 +20,8 @@ function Item({item, addItem, cartItems}) {
                 price: price,
                 quantity: quantity
             }
-        )) 
+        )),
+        setButtonTitle('In the cart')
         )
 
 
@@ -29,7 +30,7 @@ function Item({item, addItem, cartItems}) {
             <div className='item__img'>
                 <img src={url} alt='' />
     <button onClick={() => addToTheCartHandler(id)}>
-    Add to the cart
+    {buttonTitle}
           </button>
             </div>
             <div className='item__details'>

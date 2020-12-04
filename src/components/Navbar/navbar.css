@@ -6,12 +6,13 @@
     position: fixed;
     z-index: 10;
     background: #f8f8ff;
+    font-size: small;
     top: 0px;
 }
 
 .navbar__items {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex: 1;
 }
 
@@ -20,18 +21,44 @@
     cursor: pointer;
 }
 
+.navbar__items > .MuiSvgIcon-root {
+    position: relative;
+}
+
 .navbar__items > .MuiSvgIcon-root:hover {
     color: #11b3ff;
     cursor: pointer;
+}    
+
+.navbar__cartLength {
+    position: absolute;
+    right: 0.5%;
+    top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #B200ED 1px solid;
+    border-radius: 45%;
+    width: 20px;
+    height: 20px;
+    background-color: #B200ED;
 }
+
+.navbar__cartLength > p {
+    padding: 2px;
+    color: #ffffff;
+    font-size: small;
+}
+
 
 .navbar__items > h3 {
     color: darkslateblue;
-    
+    margin-right: 20px;
 }
 
 .navbar__items > a {
     text-decoration: none;
+    margin-right: 20px;
 }
 
 .navbar__items > a:hover {

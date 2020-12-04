@@ -1,14 +1,16 @@
 .checkout {
+    margin-top: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background: #f8f8ff;
     width: 70%;
-    height: 80vh;
     margin: auto;
 }
 
+.checkout__content {
+    width: 100%;
+}
 
 .checkout__header {
     display: flex;

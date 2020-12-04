@@ -19,7 +19,7 @@ const promise = loadStripe("pk_test_51HqNdwGB4kjijur7PvxaEvxhx7WY2SX3mg9ydOCKxlJ
 function App() {
   const dispatch = useDispatch()
   const user = useSelector(selectUser);
-
+  
   useEffect (() => {
     auth.onAuthStateChanged((authUser) => {
       console.log('user is', authUser)
@@ -47,7 +47,9 @@ function App() {
           <>
           <Navbar />
       <Switch>
-       <Route exact path = '/' component={Home}/>
+       <Route exact path = '/' >
+         <Home />
+         </Route>
         <Route path = '/checkout'>
           <Elements stripe={promise}>
             <Checkout />
@@ -64,9 +66,6 @@ function App() {
       
     </div>
     </Router>
-
-
-
   );
 }
 

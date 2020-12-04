@@ -11,7 +11,7 @@ import { db } from '../../../firebase';
 
 
   
-function Checkout({cartItems, total}) {
+function Checkout() {
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
     const basket = useSelector(selectBasket);
@@ -119,7 +119,7 @@ function Checkout({cartItems, total}) {
             }
             <div className='checkout__total'>
                    {cartTotal ? 
-                   <span>Total: ${cartTotal}</span>:
+                   <span>Total: ${cartTotal.toFixed(2)}</span>:
                    <span>Total: $0.00</span>
                    }
                 

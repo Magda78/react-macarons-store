@@ -2,7 +2,7 @@
 	display: flex;
 	width: 100%;
 	margin-top: 70px;
-	height: 100vh;
+	height: 80vh;
 }
 
 .login__left {
@@ -31,7 +31,6 @@
 .login__leftInfo > p {
 	margin-top: 30px;
 	line-height: 25px;
-	font-size: 18px;
 	line-height: 166.7%;
 	letter-spacing: 1px;
 	color: #ffffff;
@@ -41,11 +40,12 @@
 
 .login__right {
 	flex: 0.5;
-	background-image: url('../../../assets//banner.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	
+}
+
+.login__right > img {
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 800px) {
