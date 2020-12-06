@@ -13,12 +13,14 @@ import { login, logout} from './features/userSlice';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
+
 const promise = loadStripe("pk_test_51HqNdwGB4kjijur7PvxaEvxhx7WY2SX3mg9ydOCKxlJuASB8ItzmyWwASL71ouPsnmrOyNKyDltVV6fYytN9Ma3E00VQbCwBxt");
 
 
 function App() {
   const dispatch = useDispatch()
   const user = useSelector(selectUser);
+
   
   useEffect (() => {
     auth.onAuthStateChanged((authUser) => {
@@ -47,9 +49,9 @@ function App() {
           <>
           <Navbar />
       <Switch>
-       <Route exact path = '/' >
-         <Home />
-         </Route>
+        <Route exact path = '/' >
+           <Home />
+        </Route>
         <Route path = '/checkout'>
           <Elements stripe={promise}>
             <Checkout />

@@ -45,12 +45,12 @@ function CartItem({id, url, price,title, quantity, total}) {
             <div className='cartItem__details'>
                 <h4>{title}</h4>
                 <div className='cartItem__info'>
+                <span className='cartItem__quantityNumber'>Price: ${price}</span>
                 <div className='cartItem__quantity'>
                     <span className='cartItem__icons' onClick={() => minusItemHandler(id)}><ArrowLeftIcon/></span>
-                    <span>{quantity}</span>
+                    <span className='cartItem__quantityNumber'>{quantity}</span>
                     <span className='cartItem__icons' onClick={() => addItemHandler(id)}><ArrowRightIcon/></span>
                 </div>
-                <span>x ${price}</span>
                 </div>  
             </div>
         </div>

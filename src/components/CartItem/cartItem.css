@@ -1,12 +1,15 @@
 .cartItem {
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .cartItem__details {
-    text-align: center;
     flex: 0.6;
+}
+
+.cartItem__details > h4 {
+    border-bottom: 1px solid lightgray;
 }
 
 .cartItem__img {
@@ -16,7 +19,7 @@
 .cartItem__img > img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .cartItem__quantity {
@@ -27,7 +30,13 @@
 .cartItem__info {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     height: 50%;
+    font-size: smaller;
+}
+
+.cartItem__quantityNumber {
+    margin-top: 3px;
 }
 
 .cartItem__icons > .MuiSvgIcon-root {

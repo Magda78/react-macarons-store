@@ -64,10 +64,14 @@ export const basketSlice = createSlice ({
 
     setOpen: (state) => {
       state.open = !state.open
+    },
+
+    setCheckout: (state) => {
+      state.basket = [];
     }
   }
 })
-export const { setBasket, setOpen, setRemove, setAddQuantity, setRemoveQuantity, setTotal } = basketSlice.actions;
+export const { setBasket, setOpen, setRemove, setAddQuantity, setRemoveQuantity, setTotal, setCheckout } = basketSlice.actions;
 export const selectBasket = (state) => state.basket.basket;
 export const selectTotal = (state) => state.basket.total;
 export const selectOpen = (state) => state.basket.open;

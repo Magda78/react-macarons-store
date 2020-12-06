@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './checkout.css';
 import CheckoutItem from '../../CheckoutItem/checkoutItem';
 import { selectUser } from '../../../features/userSlice';
-import { selectBasket, selectTotal, setTotal} from '../../../features/basketSlice';
+import { selectBasket, selectTotal, setTotal, setCheckout} from '../../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from '../../../axios';
@@ -74,7 +74,8 @@ function Checkout() {
             setProcessing(false);
 
             //history.push('/orders')
-            alert('Thank you for your order')
+            alert('Thank you for your order');
+            
         });
         
     }
