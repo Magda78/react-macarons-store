@@ -8,6 +8,7 @@ import { selectBasket, selectOpen, setOpen } from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
 import Cart from '../Cart/cart';
+import Backdrop from '../Backdrop/backdrop';
 
 function Navbar() {
 	const dispatch = useDispatch()
@@ -28,7 +29,11 @@ function Navbar() {
 				<h3 onClick={() => auth.signOut()}>LogOut</h3>
 				<ShoppingCartIcon onClick= {handleShoppingCart}/>
 					{
-						toggleCart ? (<Cart />) : null
+						toggleCart ? 
+						<>
+						<Cart />
+							<Backdrop/>
+							</>: null
 					}
 				<div className='navbar__cartLength'>
 					<p>{basket.length}</p>

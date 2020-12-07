@@ -8,7 +8,8 @@
     background-color: white;
     top: 60px;
     right: 15px;
-    z-index: 5;
+    z-index: 100;
+    cursor: pointer;
 }
 
 .cart__items {
@@ -26,6 +27,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .cart > button {

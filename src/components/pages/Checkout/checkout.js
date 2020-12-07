@@ -73,8 +73,8 @@ function Checkout() {
             setError(null);
             setProcessing(false);
 
-            //history.push('/orders')
-            alert('Thank you for your order');
+            history.push('/orders')
+            //alert('Thank you for your order');
             
         });
         

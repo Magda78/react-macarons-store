@@ -37,6 +37,7 @@
 
 .cartItem__quantityNumber {
     margin-top: 3px;
+    width: 30%;
 }
 
 .cartItem__icons > .MuiSvgIcon-root {

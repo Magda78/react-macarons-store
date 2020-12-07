@@ -5,6 +5,7 @@ import { selectBasket, setTotal, setOpen} from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+
 function Cart({cartItems, history, toogleCartHidden}) {
     const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
