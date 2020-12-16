@@ -8,10 +8,11 @@ function Banner() {
 			<div className='banner__left'>
                 <div className='banner__leftInfo'>
                     <h2>Something for sweet tooth</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. </p>
+                    <p> Phasellus sollicitudin lorem nec justo molestie placerat. 
+                        Pellentesque ac eros elementum, euismod ligula nec, posuere massa. 
+                        Vestibulum vel blandit arcu, nec posuere tellus. Ut laoreet nec nibh vel gravida. 
+                        Ut facilisis consectetur velit eget consequat. Vestibulum ante ipsum primis in 
+                        faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum lorem lectus.  </p>
                 </div>
             </div>
             <div className='banner__right'>

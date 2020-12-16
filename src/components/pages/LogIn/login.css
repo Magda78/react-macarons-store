@@ -38,6 +38,19 @@
     margin-bottom: 40px;
 }
 
+.login__leftInfo > button {
+	width: 100%;
+    background-color: #DD9CB4;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.login__leftInfo > button:hover {
+	background-color: deeppink;
+	cursor: pointer;
+}
+
 .login__right {
 	flex: 0.5;
 }

@@ -16,6 +16,29 @@
     flex: 1;
 }
 
+.navbar_itemsSearch {
+    position: relative;
+    display: flex;
+    margin-right: 20px;
+    border: 1px solid deeppink;
+    width: 80%;
+}
+
+.navbar_itemsSearch > input {
+    width: 100%;
+}
+
+.navbar_itemsSearch > .MuiSvgIcon-root {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+.navbar_itemsSearch > .MuiSvgIcon-root:hover {
+    color: #11b3ff;
+    cursor: pointer;
+}
+
 .navbar__items > h3:hover {
     color: #11b3ff;
     cursor: pointer;
