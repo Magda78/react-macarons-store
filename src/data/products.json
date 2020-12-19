@@ -2,7 +2,7 @@
 		{
 			"sys": { "id": "1" },
 			"fields": {
-				"title": "Black",
+				"title": "VANILLA",
 				"price": 10.99,
 				"quantity": 0,
 				"total": 0,
@@ -17,7 +17,7 @@
 		{
 			"sys": { "id": "2" },
 			"fields": {
-				"title": "MACARONS SET 2",
+				"title": "CHOCOLATE",
 				"price": 12.99,
 				"quantity": 0,
 				"total": 0,
@@ -33,7 +33,7 @@
 		{
 			"sys": { "id": "3" },
 			"fields": {
-				"title": "MACARONS SET 3",
+				"title": "MATCHA",
 				"price": 12.99,
 				"quantity": 0,
 				"total": 0,
@@ -49,7 +49,7 @@
 		{
 			"sys": { "id": "4" },
 			"fields": {
-				"title": "MACARONS SET 4",
+				"title": "STRAWBERRY",
 				"price": 22.99,
 				"quantity": 0,
 				"total": 0,
@@ -65,7 +65,7 @@
 		{
 			"sys": { "id": "5" },
 			"fields": {
-				"title": "MACARONS SET 5",
+				"title": "PISTACHIO",
 				"price": 8.99,
 				"quantity": 0,
 				"total": 0,
@@ -81,7 +81,7 @@
 		{
 			"sys": { "id": "6" },
 			"fields": {
-				"title": "MACARONS SET 6",
+				"title": "MINT",
 				"price": 3.99,
 				"quantity": 0,
 				"total": 0,
@@ -97,7 +97,7 @@
 		{
 			"sys": { "id": "7" },
 			"fields": {
-				"title": "MACARONS SET 7",
+				"title": "CORN",
 				"price": 5.99,
 				"quantity": 0,
 				"total": 0,
@@ -113,7 +113,7 @@
 		{
 			"sys": { "id": "8" },
 			"fields": {
-				"title": "MACARONS SET 8",
+				"title": "GRAPEFRUIT",
 				"price": 8.99,
 				"quantity": 0,
 				"total": 0,

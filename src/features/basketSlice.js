@@ -5,6 +5,7 @@ export const basketSlice = createSlice ({
   initialState: {
     basket: [],
     open: false,
+    disabled: false,
     total: 0
   },
   reducers: {
@@ -48,7 +49,7 @@ export const basketSlice = createSlice ({
             
   
               if(isThere) {
-                isThere.quantity--;
+                isThere.quantity > 1 ? isThere.quantity-- : state.disabled = true;
                // total = price * quantity ;
               }
             },

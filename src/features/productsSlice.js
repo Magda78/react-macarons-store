@@ -18,18 +18,9 @@ export const productsSlice = createSlice({
   },
   reducers: {
     setSearch: (state, action) => {
-      //state.products = [];
-      const searchItem = state.products.find(item => {
-        if (item.title.includes(action.payload)) {
-          
-          return item
-        };
-        //item.title.includes('a');
-        
-        //return {item.id, title, price, url, quantity}
-      });
-      state.products = []
-      state.products.push(searchItem);
+  
+      const searchItem = !action.payload ? state.products = newItems :state.products.filter(item => item.title.includes(action.payload))
+      state.products = searchItem;
       console.log('FROM SLICE STATE:', state.products)
       console.log('FROM SLICE PAYLOAD:', action.payload)
       console.log('FROM SLICE SEARCH:', searchItem);
