@@ -26,9 +26,9 @@ function Products() {
 
       console.log(products)
     return (
-        <div className='products'>
+        <div className='products' id='products'>
             <h3>Our Products</h3>
-            <div className='product__list'>
+            <div className='product__list' >
                 {
                     products.map(item => (
                         <Item 

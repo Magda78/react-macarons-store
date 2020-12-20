@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/pages/Home/home';
 import Checkout from './components/pages/Checkout/checkout';
 import Navbar from './components/Navbar/navbar';
+import NavbarOtherPages from './components/Navbar/navbarOtherPages';
 import Login from './components/pages/LogIn/login';
 import Orders from './components/pages/Orders/orders';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -47,17 +48,22 @@ function App() {
       {
         user ? (
           <>
-          <Navbar />
+          
       <Switch>
         <Route exact path = '/' >
+        <Navbar />
            <Home />
         </Route>
         <Route path = '/checkout'>
           <Elements stripe={promise}>
+            <NavbarOtherPages />
             <Checkout />
           </Elements>  
         </Route>
-        <Route path ='/orders' component={Orders}/> 
+        <Route path ='/orders' >
+          <NavbarOtherPages />
+        <Orders />
+        </Route>
       </Switch> 
       </>
         )
