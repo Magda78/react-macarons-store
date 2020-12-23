@@ -14,6 +14,7 @@ import Products from '../Products/products';
 import Backdrop from '../Backdrop/backdrop';
 import SearchIcon from '@material-ui/icons/Search';
 import { HashLink } from 'react-router-hash-link';
+import Message from '../../components/Message/message';
 //import { Link, animateScroll as scroll } from "react-scroll";
 
 function Navbar() {
@@ -35,18 +36,24 @@ function Navbar() {
 	 }
 
 	 const handleSubmitSearch = () => {
-		 dispatch(setSearch(searchInput))
+		 if(searchInput != '') {
+			dispatch(setSearch(searchInput))
+		 } else {
+			alert('Please pick the flavor');
+		 }
+		
 		console.log('FROM NAVBAR:', searchInput)
 		console.log('FROM NAVBAR:',productList)
-	 }
+		}
 	
 	return (
 		<div className="navbar">
 			<div className="navbar__items">
 				<Link to='/'><HomeIcon /></Link>
 					<div className='navbar_itemsSearch'>
-						<input type='text' placeholder='search flavor...' onChange={handleSearch}/>
-						<HashLink to="#products"><SearchIcon onClick={handleSubmitSearch}/></HashLink>
+						<input type='text' placeholder='search flavors...' onChange={handleSearch}/>
+						<HashLink to="#products" className='navbar_itemsSearchLink'><SearchIcon onClick={handleSubmitSearch}/>
+						</HashLink>
 				</div>
 				
 				<h3 onClick={() => auth.signOut()}>LogOut</h3>

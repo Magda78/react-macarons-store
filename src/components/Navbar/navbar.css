@@ -28,13 +28,13 @@
     width: 100%;
 }
 
-.navbar_itemsSearch > .MuiSvgIcon-root {
+.navbar_itemsSearchLink > .MuiSvgIcon-root {
     position: absolute;
     right: 1px;
     top: 1px;
 }
 
-.navbar_itemsSearch > .MuiSvgIcon-root:hover {
+.navbar_itemsSearchLink > .MuiSvgIcon-root:hover {
     color: #11b3ff;
     cursor: pointer;
 }
