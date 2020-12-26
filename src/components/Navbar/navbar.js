@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
 import Cart from '../Cart/cart';
 import Products from '../Products/products';
-//import Home from '../pages/Home/home';
+import Home from '../pages/Home/home';
 import Backdrop from '../Backdrop/backdrop';
 import BackdropMessage from '../Backdrop/backdropMessage';
 import SearchIcon from '@material-ui/icons/Search';
@@ -52,11 +52,16 @@ function Navbar() {
 		//console.log('FROM NAVBAR:', searchInput)
 		//console.log('FROM NAVBAR:',productList)
 	 }
+
+	 //const handleRefreshPage = () => {
+		// console.log(productList)
+		 //window.location.reload();
+	// }
 	
 	return (
 		<div className="navbar">
 			<div className="navbar__items">
-				<Link to='/'><HomeIcon /></Link>
+				<a onClick={() => {window.location.href="/"}}><HomeIcon /></a>
 					<div className='navbar_itemsSearch'>
 						<input type='text' id='input' placeholder='search flavors...' onChange={handleSearch}/>
 						<HashLink to="#products" className='navbar_itemsSearchLink'><SearchIcon onClick={handleSubmitSearch}/>
