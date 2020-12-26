@@ -1,0 +1,46 @@
+.message {
+	width: 256px;
+	height: 150px;
+	margin-bottom: 40px;
+	background: #ffffff;
+	filter: drop-shadow(6px 6px 4px rgba(106, 180, 211, 0.15));
+	border-radius: 15px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    z-index: 100;
+}
+
+.message_hide {
+    display: none;
+}
+
+.message_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.message_info > p {
+    margin-bottom: 10px;
+}
+
+.message_info > button {
+    width: 90%;
+    background-color: #DD9CB4;
+    border: none;
+    padding: 5px;
+    color: white;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.message_info > button:hover {
+    background-color: deeppink;
+	cursor: pointer;
+}

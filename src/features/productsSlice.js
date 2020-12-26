@@ -14,7 +14,8 @@ import items from '../data/products.json';
 export const productsSlice = createSlice({
   name: "products",
   initialState: {
-    products: newItems
+    products: newItems,
+    messageOpen: false
   },
   reducers: {
     setSearch: (state, action) => {
@@ -26,13 +27,17 @@ export const productsSlice = createSlice({
       console.log('FROM SLICE SEARCH:', searchItem);
       
   },
+  setOpenMessage: (state) => {
+    state.messageOpen = !state.messageOpen
+  }
 }
 });
 
 
 
-export const { setSearch } = productsSlice.actions;
+export const { setSearch, setOpenMessage } = productsSlice.actions;
 
 export const selectProducts = state => state.products.products;
+export const selectOpenMessage = (state) => state.products.messageOpen;
 
 export default productsSlice.reducer;
