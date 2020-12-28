@@ -1,7 +1,5 @@
 import React from 'react';
 import './cartItem.css';
-//import { selectBasket } from '../../features/basketSlice';
-//import { useSelector } from 'react-redux';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, selectTotal, setTotal} from '../../features/basketSlice';
@@ -56,5 +54,6 @@ function CartItem({id, url, price,title, quantity, total}) {
         </div>
     )
 }
+
 
 export default CartItem

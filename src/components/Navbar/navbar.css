@@ -88,3 +88,14 @@
     color: #11b3ff;
     cursor: pointer;
 }
+
+@media (min-width:320px) {
+	.navbar__items {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+    }
+    .navbar_itemsSearch {
+        width: 60%;
+    }
+   }

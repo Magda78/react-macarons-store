@@ -55,8 +55,9 @@ function App() {
            <Home />
         </Route>
         <Route path = '/checkout'>
+        <NavbarOtherPages />
           <Elements stripe={promise}>
-            <NavbarOtherPages />
+            
             <Checkout />
           </Elements>  
         </Route>

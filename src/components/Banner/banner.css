@@ -61,5 +61,11 @@
 	}
    }
 
+   @media (min-width:320px) {
+	.banner__leftInfo  h2{
+		font-size: 32px;
+	}  
+   }
+
 
 

@@ -26,7 +26,8 @@ function Navbar() {
 	let toggleCart = useSelector(selectOpen);
 	let toggleMessage = useSelector(selectOpenMessage);
 	const [searchInput, setSearchInput] = useState('');
-	const [buttonClick, setButtonClick] = useState(false)
+	const [buttonClick, setButtonClick] = useState(false);
+	let sum = 0;
 	
 	 const handleShoppingCart = () => {
 		console.log(toggleCart)

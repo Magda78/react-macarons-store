@@ -6,17 +6,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 
-function Cart({cartItems, history, toogleCartHidden}) {
+function Cart({ history }) {
     const dispatch = useDispatch()
     const basket = useSelector(selectBasket);
-    //const isThere = basket.find(item => item.id === id) 
     const totalHandler = () => {
-        //  console.log(cartTotal)
           dispatch(setTotal());
       }
       const handleShoppingCart = () => {
-		dispatch(setOpen())
-		
+		dispatch(setOpen())	
 	 }  
 
     return (
@@ -37,7 +34,7 @@ function Cart({cartItems, history, toogleCartHidden}) {
                         ),
                         )
                         
-                        ) :
+                     ) :
                     <span className='cart__itemsMsg'>Your cart is empty</span>
                 }
             </div>
@@ -50,7 +47,6 @@ function Cart({cartItems, history, toogleCartHidden}) {
         </div>
     )
 }
-
 
 
 export default withRouter(Cart);

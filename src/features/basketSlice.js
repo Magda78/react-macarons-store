@@ -6,7 +6,8 @@ export const basketSlice = createSlice ({
     basket: [],
     open: false,
     disabled: false,
-    total: 0
+    total: 0,
+    quantity:0
   },
   reducers: {
     setBasket: (state, action) => {
@@ -62,6 +63,8 @@ export const basketSlice = createSlice ({
               state.total += itemTotal;
             })
           },
+
+         
 
     setOpen: (state) => {
       state.open = !state.open

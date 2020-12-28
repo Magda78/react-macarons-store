@@ -38,3 +38,10 @@
     cursor: pointer;
     color: darkslateblue;
 }
+
+@media (min-width:320px) {
+    .follow__iconsContainer {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

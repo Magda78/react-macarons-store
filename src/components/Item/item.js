@@ -4,12 +4,12 @@ import { selectBasket, setBasket } from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 
-function Item({item, addItem, cartItems}) {
+function Item({item}) {
     const dispatch = useDispatch()
 	const basket = useSelector(selectBasket);
     const { id, url, title, price } = item
     let { quantity } = item
-    const [buttonTitle, setButtonTitle] = useState('Add to the card')
+    const [buttonTitle, setButtonTitle] = useState('Add to the cart')
 
     const addToTheCartHandler = (id) => (
         dispatch(setBasket(
@@ -40,8 +40,6 @@ function Item({item, addItem, cartItems}) {
         </div>
     )
 }
-
-
 
 
 export default Item;
