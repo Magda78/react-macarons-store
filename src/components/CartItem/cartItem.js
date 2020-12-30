@@ -2,7 +2,7 @@ import React from 'react';
 import './cartItem.css';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, selectTotal, setTotal} from '../../features/basketSlice';
+import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, setQuantity, selectTotal, setTotal} from '../../features/basketSlice';
 import { useSelector, useDispatch} from 'react-redux';
 
 function CartItem({id, url, price,title, quantity, total}) {
@@ -18,7 +18,9 @@ function CartItem({id, url, price,title, quantity, total}) {
                 total: total,
                 quantity: quantity
         }
-        ))
+        )),
+        dispatch(setQuantity())
+        
     )
 
     const minusItemHandler = () => (
@@ -31,7 +33,8 @@ function CartItem({id, url, price,title, quantity, total}) {
                 total: total,
                 quantity: quantity
         }
-    ))
+    )),
+    dispatch(setQuantity())
     )
 
 

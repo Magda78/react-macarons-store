@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './item.css';
-import { selectBasket, setBasket } from '../../features/basketSlice';
+import { selectBasket, setBasket, setQuantity } from '../../features/basketSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -21,7 +21,8 @@ function Item({item}) {
                 quantity: quantity
             }
         )),
-        setButtonTitle('In the cart')
+        setButtonTitle('In the cart'),
+        dispatch(setQuantity())
         )
 
 

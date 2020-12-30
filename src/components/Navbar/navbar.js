@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import { selectUser } from '../../features/userSlice';
-import { selectBasket, selectOpen, setOpen } from '../../features/basketSlice';
+import { selectBasket, selectOpen, setOpen, selectQuantity, setQuantity } from '../../features/basketSlice';
 import { setSearch, setOpenMessage, selectProducts, selectOpenMessage } from '../../features/productsSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
@@ -23,10 +23,12 @@ function Navbar() {
 	const user = useSelector(selectUser);
 	const basket = useSelector(selectBasket);
 	const productList = useSelector(selectProducts);
+	const quantity = useSelector(selectQuantity);
 	let toggleCart = useSelector(selectOpen);
 	let toggleMessage = useSelector(selectOpenMessage);
 	const [searchInput, setSearchInput] = useState('');
 	const [buttonClick, setButtonClick] = useState(false);
+	const [cartQuantity, setCartQuantity] = useState(0);
 	let sum = 0;
 	
 	 const handleShoppingCart = () => {
@@ -58,7 +60,10 @@ function Navbar() {
 		// console.log(productList)
 		 //window.location.reload();
 	// }
-	
+	const handleCartQuantity = () => {
+		dispatch(setQuantity());
+	}
+
 	return (
 		<div className="navbar">
 			<div className="navbar__items">
@@ -87,7 +92,8 @@ function Navbar() {
 							</>: null
 					}
 				<div className='navbar__cartLength'>
-					<p>{basket.length}</p>
+					<p>{quantity}</p>
+					
 				</div>
 			</div>
 		</div>
