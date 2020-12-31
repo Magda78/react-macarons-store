@@ -19,23 +19,29 @@ export const productsSlice = createSlice({
   },
   reducers: {
     setSearch: (state, action) => {
-  
-      const searchItem = !action.payload ? state.products = newItems :state.products.filter(item => item.title.includes(action.payload))
-      state.products = searchItem;
+      const searchItem = state.products.filter(item => item.title.includes(action.payload));
+      action.payload  ? state.products = searchItem : state.products = newItems
+      //const searchItem = state.products.filter(item => item.title.includes(action.payload));
+      //searchItem ? state.products = searchItem : state.products = newItems
+      //state.products = searchItem;
       console.log('FROM SLICE STATE:', state.products)
       console.log('FROM SLICE PAYLOAD:', action.payload)
-      console.log('FROM SLICE SEARCH:', searchItem);
+      //console.log('FROM SLICE SEARCH:', searchItem);
+      console.log('FROM SLICE PRODUCTS', state.products)
       
   },
   setOpenMessage: (state) => {
     state.messageOpen = !state.messageOpen
+  },
+  setProducts: (state) => {
+    state.products = newItems
   }
 }
 });
 
 
 
-export const { setSearch, setOpenMessage } = productsSlice.actions;
+export const { setSearch, setOpenMessage, setProducts} = productsSlice.actions;
 
 export const selectProducts = state => state.products.products;
 export const selectOpenMessage = (state) => state.products.messageOpen;

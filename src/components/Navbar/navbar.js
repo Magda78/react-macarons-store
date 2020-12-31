@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import { selectUser } from '../../features/userSlice';
 import { selectBasket, selectOpen, setOpen, selectQuantity, setQuantity } from '../../features/basketSlice';
-import { setSearch, setOpenMessage, selectProducts, selectOpenMessage } from '../../features/productsSlice'
+import { setSearch, setOpenMessage, selectProducts, selectOpenMessage, setProducts} from '../../features/productsSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
 import Cart from '../Cart/cart';
@@ -38,11 +38,14 @@ function Navbar() {
 
 	 const handleSearch = (e) => {
 		 setSearchInput(e.target.value.toUpperCase());
+		 dispatch(setSearch(e.target.value.toUpperCase())) //cant pass here setInput because after deleting letter first letter is still there
 		 console.log(e.target.value);
+		 //console.log(searchInput)
+		 e.preventDefault();
 	 }
 
 	 const handleSubmitSearch = () => {
-		dispatch(setSearch(searchInput));
+		//dispatch(setSearch(searchInput));
 		dispatch(setOpenMessage())
 		//setButtonClick(!buttonClick);
 		 //if(searchInput != '') {
