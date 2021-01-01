@@ -61,7 +61,7 @@
 	}
    }
 
-   @media (max-width:320px) {
+   @media screen and (max-width:555px) {
 	.banner__leftInfo  h2{
 		font-size: 32px;
 	}  

@@ -89,7 +89,7 @@
     cursor: pointer;
 }
 
-@media (max-width:320px) {
+@media screen and (max-width:555px) {
 	.navbar__items {
         display: flex;
         justify-content: space-between;
