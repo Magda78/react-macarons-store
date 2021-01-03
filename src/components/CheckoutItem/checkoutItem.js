@@ -5,7 +5,7 @@ import './checkoutItem.css';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, selectTotal, setTotal} from '../../features/basketSlice';
+import { selectBasket, setRemove, setAddQuantity, setRemoveQuantity, setQuantity, selectTotal, setTotal} from '../../features/basketSlice';
 import { useSelector, useDispatch} from 'react-redux';
 import CartItem from '../CartItem/cartItem';
 
@@ -31,7 +31,8 @@ function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, r
                 quantity: quantity
         }
         )),
-        totalHandler()
+        totalHandler(),
+        dispatch(setQuantity())
     )
 
     const minusItemHandler = () => (
@@ -45,7 +46,8 @@ function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, r
                 quantity: quantity
         }
     )),
-    totalHandler()
+    totalHandler(),
+    dispatch(setQuantity())
     )
 
     const removeItemHandler = (id) => (
@@ -60,7 +62,8 @@ function CheckoutItem({id,url,price,quantity,title, total, clearItem, addItem, r
             },
             console.log(id)
         )) ,
-        totalHandler()
+        totalHandler(),
+        dispatch(setQuantity())
     )
     return (
         <div className='checkoutItem'>

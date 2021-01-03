@@ -26,10 +26,13 @@
 
 .navbar_itemsSearch > input {
     width: 100%;
+    outline: none;
+    border: none;
 }
 
 .navbar_itemsSearchLink > .MuiSvgIcon-root {
     position: absolute;
+    color: darkslateblue;
     right: 1px;
     top: 1px;
 }
@@ -46,6 +49,8 @@
 
 .navbar__items > .MuiSvgIcon-root {
     position: relative;
+    color: darkslateblue;
+
 }
 
 .navbar__items > .MuiSvgIcon-root:hover {
@@ -82,6 +87,7 @@
 .navbar__items > a {
     text-decoration: none;
     margin-right: 20px;
+    color: darkslateblue;
 }
 
 .navbar__items > a:hover {

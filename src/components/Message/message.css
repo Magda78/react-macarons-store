@@ -44,3 +44,11 @@
     background-color: deeppink;
 	cursor: pointer;
 }
+
+@media screen and (max-width:660px) {
+    .message {
+        width: 200px;
+        right: 5%;
+        text-align: center;
+    }
+}

@@ -39,9 +39,12 @@
     color: darkslateblue;
 }
 
-@media (min-width:320px) {
-    .follow__iconsContainer {
-        margin-left: 10px;
-        margin-right: 10px;
+@media screen and (max-width:660px) {
+	.follow__iconsContainer {
+        display: flex;
+        flex-direction: column;
+    }  
+    .follow {
+        width: 100%;
     }
-}
+   }

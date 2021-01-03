@@ -80,6 +80,7 @@ export const basketSlice = createSlice ({
 
     setCheckout: (state) => {
       state.basket = [];
+      state.quantity = 0;
     }
   }
 })

@@ -1,7 +1,7 @@
 .cart {
     position: absolute;
     width: 25%;
-    height: 80vh;
+    height: 550px;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -12,8 +12,8 @@
 }
 
 .cart__items {
-    height: 90%;
     display: flex;
+    height: 90%;
     flex-direction: column;
     overflow-y: scroll;
     margin-bottom: 10px;
@@ -44,8 +44,10 @@
 	cursor: pointer;
 }
   
-@media (max-width:320px) {
+@media screen and (max-width:700px) {
     .cart {
-        width: 60%;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
     }
 }

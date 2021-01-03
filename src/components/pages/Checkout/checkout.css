@@ -40,3 +40,10 @@
     border-top: 1px solid darkgrey;
     width: 100%;
 }
+
+@media screen and (max-width:665px) {
+	.checkout__header {
+        font-size: x-small;
+        padding-top: 10px;
+    }
+}

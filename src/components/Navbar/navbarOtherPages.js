@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import { selectUser } from '../../features/userSlice';
-import { selectBasket, selectOpen, setOpen } from '../../features/basketSlice';
+import { selectBasket, selectOpen, setOpen, selectQuantity, setQuantity } from '../../features/basketSlice';
 import { setSearch, selectProducts } from '../../features/productsSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
@@ -17,7 +17,8 @@ function NavbarOtherPages() {
 	const dispatch = useDispatch()
 	const user = useSelector(selectUser);
 	const basket = useSelector(selectBasket);
-	const productList = useSelector(selectProducts)
+	const productList = useSelector(selectProducts);
+	const quantity = useSelector(selectQuantity);
 	let toggleCart = useSelector(selectOpen);
 	const [searchInput, setSearchInput] = useState('')
 	
@@ -36,13 +37,17 @@ function NavbarOtherPages() {
 		console.log('FROM NAVBAR:', searchInput)
 		console.log('FROM NAVBAR:',productList)
 	 }
+
+	 const handleCartQuantity = () => {
+		dispatch(setQuantity());
+	}
 	
 	return (
 		<div className="navbar">
 			<div className="navbar__items">
 				<Link to='/'><HomeIcon /></Link>
 				
-				<h3 onClick={() => auth.signOut()}>LogOut</h3>
+				<h3 onClick={() => auth.signOut()}>Logout</h3>
 				<ShoppingCartIcon onClick= {handleShoppingCart}/>
 					{
 						toggleCart ? 
@@ -52,7 +57,7 @@ function NavbarOtherPages() {
 							</>: null
 					}
 				<div className='navbar__cartLength'>
-					<p>{basket.length}</p>
+					<p>{quantity}</p>
 				</div>
 			</div>
 		</div>

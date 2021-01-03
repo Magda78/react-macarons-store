@@ -70,9 +70,9 @@ function Navbar() {
 	return (
 		<div className="navbar">
 			<div className="navbar__items">
-				<a onClick={() => {window.location.href="/"}}><HomeIcon /></a>
+			<Link to='/'><HomeIcon /></Link>
 					<div className='navbar_itemsSearch'>
-						<input type='text' id='input' placeholder='search flavors...' onChange={handleSearch}/>
+						<input type='text' id='input'  onChange={handleSearch}/>
 						<HashLink to="#products" className='navbar_itemsSearchLink'><SearchIcon onClick={handleSubmitSearch}/>
 						</HashLink>
 						{
@@ -82,10 +82,10 @@ function Navbar() {
 							<BackdropMessage />
 							</> : null
 						}
-					
+						
 				</div>
 				
-				<h3 onClick={() => auth.signOut()}>LogOut</h3>
+				<h3 onClick={() => auth.signOut()}>Logout</h3>
 				<ShoppingCartIcon onClick= {handleShoppingCart}/>
 					{
 						toggleCart ? 

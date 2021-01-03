@@ -40,3 +40,12 @@
 .checkoutItem__icons > .MuiSvgIcon-root {
     cursor: pointer;
 }
+
+@media screen and (max-width:665px) {
+	.checkoutItem {
+        font-size: xx-small;
+    }
+    .checkoutItem__quantity {
+        align-items: center;
+    }
+   }
